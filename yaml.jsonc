@@ -1,4 +1,5 @@
 {
+    // CONTAINERS
     "container-mob": {
         "prefix": "container-mob",
         "body": [
@@ -45,7 +46,9 @@
         "description": "Just like the `container-item` snippet, but with a shaped recipe, making it easier to create items with recipes. **Requires MythicCrucible to work.**"
     },
     "container-skill_with_condition": {
-        "prefix": ["container-skill_with_condition"],
+        "prefix": [
+            "container-skill_with_condition"
+        ],
         "body": [
             "${1:SkillName}:",
             "    Conditions:",
@@ -56,20 +59,2266 @@
         "description": "A skill but with a condition."
     },
     "container-skill": {
-        "prefix": ["container-skill"],
-        "body": ["${1:SkillName}:", "    Skills:", "    - $0"],
+        "prefix": [
+            "container-skill"
+        ],
+        "body": [
+            "${1:SkillName}:",
+            "    Skills:",
+            "    - $0"
+        ],
         "description": "Skills are an integral feature of MythicMobs. All mobs (and items if you have the Crucible add-on) are able to have skills of various types that can be triggered under different circumstances with varying conditions. The MythicMob skill system is quite intuitive once you get used to it, and can be used to create anything from simple mobs to incredibly complex bosses. "
     },
+    "container-randomspawn": {
+        "prefix": [
+            "container-randomspawn"
+        ],
+        "body": [
+            "${1:RandomSpawnName}:",
+            "    Action: ${2|REPLACE,ADD,DENY,SCALE|}",
+            "    Type: ${3:MobName}",
+            "    Level: ${4:1}",
+            "    Chance: $5",
+            "    Priority: $6",
+            "    UseWorldScaling: ${7|true,false|}"
+        ],
+        "description": "RandomSpawns give you complete control over how mobs are supposed to spawn in your worlds. You can fully customize where, how often, and how many mobs spawn, allowing for precise control over your mob spawns."
+    },
+    "container-droptable": {
+        "prefix": [
+            "container-droptable"
+        ],
+        "body": [
+            "${1:DropTableName}:",
+            "    TotalItems: ${2:1}",
+            "    MinItems: ${3:1}",
+            "    MaxItems: ${4:1}",
+            "    Drops:",
+            "    - ${5:<item>/exp/<droptable>} ${6:amount} ${7:chance}"
+        ],
+        "description": "Drop Tables are collections of multiple drops that can be assigned to mobs. Using them makes it easier to organize your drops in almost any case where your mobs are supposed to drop multiple items."
+    },
+    // UTILITY/UNCATEGORIZED
+    "util-random_uuid": {
+        "prefix": [
+            "util-random_uuid"
+        ],
+        "body": [
+            "$UUID"
+        ],
+        "description": "Generates a random UUID."
+    },
+    // MECHANICS
+    "mechanic-togglepiston": {
+        "prefix": [
+            "mechanic-togglepiston",
+            "mechanic-piston"
+        ],
+        "body": [
+            "togglepiston{} @${0:Target}"
+        ],
+        "description": "Toggles a piston at the target location"
+    },
+    "mechanic-explosion": {
+        "prefix": [
+            "mechanic-explosion",
+            "mechanic-explode"
+        ],
+        "body": [
+            "explosion{} @${0:Target}"
+        ],
+        "description": "Causes an explosion at the target location"
+    },
+    "mechanic-playBlockPlaceSound": {
+        "prefix": [
+            "mechanic-playBlockPlaceSound",
+            "mechanic-blockPlaceSound"
+        ],
+        "body": [
+            "playBlockPlaceSound{} @${0:Target}"
+        ],
+        "description": "Plays the target block's placing sound. Requires Paper."
+    },
+    "mechanic-disguiseTarget": {
+        "prefix": [
+            "mechanic-disguiseTarget"
+        ],
+        "body": [
+            "disguiseTarget{} @${0:Target}"
+        ],
+        "description": "Disguises the target entity"
+    },
+    "mechanic-setmobcolor": {
+        "prefix": [
+            "mechanic-setmobcolor",
+            "mechanic-setcolor"
+        ],
+        "body": [
+            "setmobcolor{} @${0:Target}"
+        ],
+        "description": "Sets the color the target entity. Must be a colorable entity."
+    },
+    "mechanic-setgravity": {
+        "prefix": [
+            "mechanic-setgravity",
+            "mechanic-setusegravity"
+        ],
+        "body": [
+            "setgravity{} @${0:Target}"
+        ],
+        "description": "ets whether gravity affects the target entity"
+    },
+    "mechanic-summonAreaEffectCloud": {
+        "prefix": [
+            "mechanic-summonAreaEffectCloud",
+            "mechanic-summonCloud"
+        ],
+        "body": [
+            "summonAreaEffectCloud{} @${0:Target}"
+        ],
+        "description": "Summons an Area Effect Cloud"
+    },
+    "mechanic-bossBorder": {
+        "prefix": [
+            "mechanic-bossBorder",
+            "mechanic-effect:bossBorder",
+            "mechanic-e:bossBorder"
+        ],
+        "body": [
+            "bossBorder{} @${0:Target}"
+        ],
+        "description": "Draws a world border to create a boss arena"
+    },
+    "mechanic-terminateProjectile": {
+        "prefix": [
+            "mechanic-terminateProjectile",
+            "mechanic-endprojectile",
+            "mechanic-terminateproj",
+            "mechanic-endproj",
+            "mechanic-stopprojectile",
+            "mechanic-stopproj"
+        ],
+        "body": [
+            "terminateProjectile{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-jump": {
+        "prefix": [
+            "mechanic-jump"
+        ],
+        "body": [
+            "jump{} @${0:Target}"
+        ],
+        "description": "Causes the caster to jump"
+    },
+    "mechanic-effect:guardianBeam": {
+        "prefix": [
+            "mechanic-effect:guardianBeam",
+            "mechanic-guardianbeam",
+            "mechanic-e:guardianbeam",
+            "mechanic-effect:beam",
+            "mechanic-e:beam"
+        ],
+        "body": [
+            "effect:guardianBeam{} @${0:Target}"
+        ],
+        "description": "Draws a guardian beam between the origin and the target"
+    },
+    "mechanic-metavariableskill": {
+        "prefix": [
+            "mechanic-metavariableskill",
+            "mechanic-variableskill",
+            "mechanic-vskill"
+        ],
+        "body": [
+            "metavariableskill{} @${0:Target}"
+        ],
+        "description": "Finds and executes a metaskill"
+    },
+    "mechanic-effect:skybox": {
+        "prefix": [
+            "mechanic-effect:skybox",
+            "mechanic-skybox",
+            "mechanic-e:skybox"
+        ],
+        "body": [
+            "effect:skybox{} @${0:Target}"
+        ],
+        "description": "Modifies the skybox for the target player"
+    },
+    "mechanic-volley": {
+        "prefix": [
+            "mechanic-volley",
+            "mechanic-shootvolley"
+        ],
+        "body": [
+            "volley{} @${0:Target}"
+        ],
+        "description": "Fires a volley of projectiles"
+    },
+    "mechanic-firework": {
+        "prefix": [
+            "mechanic-firework",
+            "mechanic-fireworks",
+            "mechanic-effect:firework",
+            "mechanic-effect:fireworks",
+            "mechanic-e:firework"
+        ],
+        "body": [
+            "firework{} @${0:Target}"
+        ],
+        "description": "Shoots a firework"
+    },
+    "mechanic-bloodyScreen": {
+        "prefix": [
+            "mechanic-bloodyScreen",
+            "mechanic-effect:bloodyScreen",
+            "mechanic-e:bloodyScreen",
+            "mechanic-redScreen",
+            "mechanic-effect:redScreen",
+            "mechanic-e:redScreen"
+        ],
+        "body": [
+            "bloodyScreen{} @${0:Target}"
+        ],
+        "description": "Causes the player's screen to be covered in blood"
+    },
+    "mechanic-mount": {
+        "prefix": [
+            "mechanic-mount",
+            "mechanic-vehicle"
+        ],
+        "body": [
+            "mount{} @${0:Target}"
+        ],
+        "description": "Summons a vehicle for the caster"
+    },
+    "mechanic-shootfireball": {
+        "prefix": [
+            "mechanic-shootfireball",
+            "mechanic-fireball"
+        ],
+        "body": [
+            "shootfireball{} @${0:Target}"
+        ],
+        "description": "Shoots a projectile at the target location"
+    },
+    "mechanic-barCreate": {
+        "prefix": [
+            "mechanic-barCreate",
+            "mechanic-barAdd",
+            "mechanic-createBar"
+        ],
+        "body": [
+            "barCreate{} @${0:Target}"
+        ],
+        "description": "Creates a custom bossbar display"
+    },
+    "mechanic-setai": {
+        "prefix": [
+            "mechanic-setai",
+            "mechanic-ai"
+        ],
+        "body": [
+            "setai{} @${0:Target}"
+        ],
+        "description": "Sets whether the mob utilizes AI (ai=true/false)"
+    },
+    "mechanic-runaigoalselector": {
+        "prefix": [
+            "mechanic-runaigoalselector",
+            "mechanic-aigoal",
+            "mechanic-aigoals"
+        ],
+        "body": [
+            "runaigoalselector{} @${0:Target}"
+        ],
+        "description": "Modify an AI Goal Selector of the caster"
+    },
+    "mechanic-sendactionmessage": {
+        "prefix": [
+            "mechanic-sendactionmessage",
+            "mechanic-actionmessage",
+            "mechanic-am"
+        ],
+        "body": [
+            "sendactionmessage{} @${0:Target}"
+        ],
+        "description": "Send an Action Bar message to the target player"
+    },
+    "mechanic-breakBlock": {
+        "prefix": [
+            "mechanic-breakBlock",
+            "mechanic-blockBreak"
+        ],
+        "body": [
+            "breakBlock{} @${0:Target}"
+        ],
+        "description": "Breaks the block at the target location"
+    },
+    "mechanic-disguisemodifynew": {
+        "prefix": [
+            "mechanic-disguisemodifynew",
+            "mechanic-newmodifydisguise"
+        ],
+        "body": [
+            "disguisemodifynew{} @${0:Target}"
+        ],
+        "description": "Disguises the target entity"
+    },
+    "mechanic-pasteSchematic": {
+        "prefix": [
+            "mechanic-pasteSchematic",
+            "mechanic-schematicPaste",
+            "mechanic-fawePaste",
+            "mechanic-wePaste"
+        ],
+        "body": [
+            "pasteSchematic{} @${0:Target}"
+        ],
+        "description": "Pastes a schematic using Fawe"
+    },
     "mechanic-activatespawner": {
-        "prefix": ["mechanic-activatespawner"],
-        "body": ["activatespawner{spawner=${1:spawner}} @${2:target}"],
-        "description": "Activates a MythicMobs spawner, causing it to spawn mobs. Will not override any conditions or options set on the spawner."
+        "prefix": [
+            "mechanic-activatespawner",
+            "mechanic-as"
+        ],
+        "body": [
+            "activatespawner{} @${0:Target}"
+        ],
+        "description": "Activate a Mythic Spawner"
+    },
+    "mechanic-onKeyPress": {
+        "prefix": [
+            "mechanic-onKeyPress",
+            "mechanic-keyPress",
+            "mechanic-kp"
+        ],
+        "body": [
+            "onKeyPress{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the targeted entity that triggers a skill when a key is pressed"
+    },
+    "mechanic-effect:particles": {
+        "prefix": [
+            "mechanic-effect:particles",
+            "mechanic-effect:particle",
+            "mechanic-particles",
+            "mechanic-particle",
+            "mechanic-e:particles",
+            "mechanic-e:particle",
+            "mechanic-e:p"
+        ],
+        "body": [
+            "effect:particles{} @${0:Target}"
+        ],
+        "description": "Plays a particle effect at the target location"
+    },
+    "mechanic-giveitemfromslot": {
+        "prefix": [
+            "mechanic-giveitemfromslot",
+            "mechanic-givefromslot"
+        ],
+        "body": [
+            "giveitemfromslot{} @${0:Target}"
+        ],
+        "description": "Gives the target an item in the caster's equipment"
+    },
+    "mechanic-metaskill": {
+        "prefix": [
+            "mechanic-metaskill",
+            "mechanic-skill",
+            "mechanic-meta"
+        ],
+        "body": [
+            "metaskill{} @${0:Target}"
+        ],
+        "description": "Executes a metaskill"
+    },
+    "mechanic-baseDamage": {
+        "prefix": [
+            "mechanic-baseDamage",
+            "mechanic-bd",
+            "mechanic-weaponDamage",
+            "mechanic-wd"
+        ],
+        "body": [
+            "baseDamage{} @${0:Target}"
+        ],
+        "description": "Deals a percent of the mob's damage stat as damage"
+    },
+    "mechanic-goto": {
+        "prefix": [
+            "mechanic-goto",
+            "mechanic-pathto",
+            "mechanic-navigateto"
+        ],
+        "body": [
+            "goto{} @${0:Target}"
+        ],
+        "description": "Path to the target location"
+    },
+    "mechanic-damage": {
+        "prefix": [
+            "mechanic-damage",
+            "mechanic-d"
+        ],
+        "body": [
+            "damage{} @${0:Target}"
+        ],
+        "description": "Deals damage to the target"
+    },
+    "mechanic-togglesitting": {
+        "prefix": [
+            "mechanic-togglesitting",
+            "mechanic-sit"
+        ],
+        "body": [
+            "togglesitting{} @${0:Target}"
+        ],
+        "description": "Toggles the sitting state of an entity for cats/dogs."
+    },
+    "mechanic-effect:flames": {
+        "prefix": [
+            "mechanic-effect:flames",
+            "mechanic-flames",
+            "mechanic-e:flames"
+        ],
+        "body": [
+            "effect:flames{} @${0:Target}"
+        ],
+        "description": "Creates a flame effect at the target location"
+    },
+    "mechanic-heal": {
+        "prefix": [
+            "mechanic-heal",
+            "mechanic-h"
+        ],
+        "body": [
+            "heal{} @${0:Target}"
+        ],
+        "description": "Heals the target entity"
+    },
+    "mechanic-aura": {
+        "prefix": [
+            "mechanic-aura",
+            "mechanic-buff",
+            "mechanic-debuff"
+        ],
+        "body": [
+            "aura{} @${0:Target}"
+        ],
+        "description": "Applies a generic aura to the target"
+    },
+    "mechanic-message": {
+        "prefix": [
+            "mechanic-message",
+            "mechanic-msg",
+            "mechanic-m"
+        ],
+        "body": [
+            "message{} @${0:Target}"
+        ],
+        "description": "Sends a message to the target entity"
+    },
+    "mechanic-blockphysics": {
+        "prefix": [
+            "mechanic-blockphysics",
+            "mechanic-bphysics"
+        ],
+        "body": [
+            "blockphysics{} @${0:Target}"
+        ],
+        "description": "Force a block physics update at the target location"
+    },
+    "mechanic-orbital": {
+        "prefix": [
+            "mechanic-orbital",
+            "mechanic-o"
+        ],
+        "body": [
+            "orbital{} @${0:Target}"
+        ],
+        "description": "Applies an orbital aura to the target"
     },
     "mechanic-projectile": {
-        "prefix": ["mechanic-projectile"],
-        "body": [
-            "projectile{onTick=${1:onTickSkill};onHit=${2:onHitSkill};onEnd=${3:onEndSkill}} @${4:target}"
+        "prefix": [
+            "mechanic-projectile",
+            "mechanic-p"
         ],
-        "description": "A mechanic that fires a projectile."
+        "body": [
+            "projectile{} @${0:Target}"
+        ],
+        "description": "Launches a custom projectile at the target"
+    },
+    "mechanic-fly": {
+        "prefix": [
+            "mechanic-fly"
+        ],
+        "body": [
+            "fly{} @${0:Target}"
+        ],
+        "description": "Aura that enables flying on the target entity"
+    },
+    "mechanic-effect:sound": {
+        "prefix": [
+            "mechanic-effect:sound",
+            "mechanic-sound",
+            "mechanic-s",
+            "mechanic-e:sound",
+            "mechanic-e:s"
+        ],
+        "body": [
+            "effect:sound{} @${0:Target}"
+        ],
+        "description": "Plays a sound at the target location"
+    },
+    "mechanic-totem": {
+        "prefix": [
+            "mechanic-totem",
+            "mechanic-toteme",
+            "mechanic-t"
+        ],
+        "body": [
+            "totem{} @${0:Target}"
+        ],
+        "description": "Creates a static totem projectile at the target"
+    },
+    "mechanic-takeitem": {
+        "prefix": [
+            "mechanic-takeitem",
+            "mechanic-take",
+            "mechanic-takeitems",
+            "mechanic-itemtake"
+        ],
+        "body": [
+            "takeitem{} @${0:Target}"
+        ],
+        "description": "Takes an item from the target"
+    },
+    "mechanic-chainmissile": {
+        "prefix": [
+            "mechanic-chainmissile",
+            "mechanic-cmi"
+        ],
+        "body": [
+            "chainmissile{} @${0:Target}"
+        ],
+        "description": "Shoots a chaining homing missile at the target"
+    },
+    "mechanic-command": {
+        "prefix": [
+            "mechanic-command",
+            "mechanic-cmd"
+        ],
+        "body": [
+            "command{} @${0:Target}"
+        ],
+        "description": "Executes a command"
+    },
+    "mechanic-dropitem": {
+        "prefix": [
+            "mechanic-dropitem",
+            "mechanic-drop",
+            "mechanic-dropitems",
+            "mechanic-itemdrop"
+        ],
+        "body": [
+            "dropitem{} @${0:Target}"
+        ],
+        "description": "Drops an item or droptable"
+    },
+    "mechanic-consume": {
+        "prefix": [
+            "mechanic-consume"
+        ],
+        "body": [
+            "consume{} @${0:Target}"
+        ],
+        "description": "Deals damage to the target and heals the caster"
+    },
+    "mechanic-potionclear": {
+        "prefix": [
+            "mechanic-potionclear",
+            "mechanic-clearpotions",
+            "mechanic-clearpotion"
+        ],
+        "body": [
+            "potionclear{} @${0:Target}"
+        ],
+        "description": "Clears all potion effects on the target entity"
+    },
+    "mechanic-weather": {
+        "prefix": [
+            "mechanic-weather"
+        ],
+        "body": [
+            "weather{} @${0:Target}"
+        ],
+        "description": "Changes the weather"
+    },
+    "mechanic-effect:spin": {
+        "prefix": [
+            "mechanic-effect:spin",
+            "mechanic-spin",
+            "mechanic-e:spin"
+        ],
+        "body": [
+            "effect:spin{} @${0:Target}"
+        ],
+        "description": "Forces the target entity to spin"
+    },
+    "mechanic-doppleganger": {
+        "prefix": [
+            "mechanic-doppleganger",
+            "mechanic-copyplayer"
+        ],
+        "body": [
+            "doppleganger{} @${0:Target}"
+        ],
+        "description": "Disguises the caster as the target entity"
+    },
+    "mechanic-effect:smoke": {
+        "prefix": [
+            "mechanic-effect:smoke",
+            "mechanic-smoke",
+            "mechanic-e:smoke"
+        ],
+        "body": [
+            "effect:smoke{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-giveitemfromtarget": {
+        "prefix": [
+            "mechanic-giveitemfromtarget",
+            "mechanic-givefromtarget",
+            "mechanic-giveitemsfromtarget",
+            "mechanic-itemgivefromtarget"
+        ],
+        "body": [
+            "giveitemfromtarget{} @${0:Target}"
+        ],
+        "description": "Gives the target an item or droptable"
+    },
+    "mechanic-playBlockFallSound": {
+        "prefix": [
+            "mechanic-playBlockFallSound",
+            "mechanic-blockFallSound"
+        ],
+        "body": [
+            "playBlockFallSound{} @${0:Target}"
+        ],
+        "description": "Plays the target block's fall sound. Requires Paper."
+    },
+    "mechanic-wolfsit": {
+        "prefix": [
+            "mechanic-wolfsit"
+        ],
+        "body": [
+            "wolfsit{} @${0:Target}"
+        ],
+        "description": "Sets a wolf's sitting state"
+    },
+    "mechanic-animatearmorstand": {
+        "prefix": [
+            "mechanic-animatearmorstand",
+            "mechanic-animateas",
+            "mechanic-animas"
+        ],
+        "body": [
+            "animatearmorstand{} @${0:Target}"
+        ],
+        "description": "Makes an armor stand assume a pose over a specified time"
+    },
+    "mechanic-effect:lightning": {
+        "prefix": [
+            "mechanic-effect:lightning",
+            "mechanic-e:lightning"
+        ],
+        "body": [
+            "effect:lightning{} @${0:Target}"
+        ],
+        "description": "Causes a lightning strike effect at the target location"
+    },
+    "mechanic-variableMath": {
+        "prefix": [
+            "mechanic-variableMath",
+            "mechanic-varMath",
+            "mechanic-mathVariable",
+            "mechanic-mathVar"
+        ],
+        "body": [
+            "variableMath{} @${0:Target}"
+        ],
+        "description": "Sets a variable to the result of a math equation, where 'x' is the variable's current value"
+    },
+    "mechanic-effect:particletornado": {
+        "prefix": [
+            "mechanic-effect:particletornado",
+            "mechanic-particletornado",
+            "mechanic-e:pt"
+        ],
+        "body": [
+            "effect:particletornado{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-giveitem": {
+        "prefix": [
+            "mechanic-giveitem",
+            "mechanic-give",
+            "mechanic-giveitems",
+            "mechanic-itemgive"
+        ],
+        "body": [
+            "giveitem{} @${0:Target}"
+        ],
+        "description": "Gives the target an item or droptable"
+    },
+    "mechanic-effect:totemresurrection": {
+        "prefix": [
+            "mechanic-effect:totemresurrection",
+            "mechanic-totemresurrection",
+            "mechanic-e:totemresurrection",
+            "mechanic-totemresurrectioneffect",
+            "mechanic-totemofundying",
+            "mechanic-e:totemofundying",
+            "mechanic-totemeffect"
+        ],
+        "body": [
+            "effect:totemresurrection{} @${0:Target}"
+        ],
+        "description": "Plays a fake totem resurrection effect"
+    },
+    "mechanic-showentity": {
+        "prefix": [
+            "mechanic-showentity",
+            "mechanic-showplayer"
+        ],
+        "body": [
+            "showentity{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-teleportin": {
+        "prefix": [
+            "mechanic-teleportin",
+            "mechanic-tpdir",
+            "mechanic-tpin",
+            "mechanic-tpi"
+        ],
+        "body": [
+            "teleportin{} @${0:Target}"
+        ],
+        "description": "Teleports the target in a direction"
+    },
+    "mechanic-settonguetarget": {
+        "prefix": [
+            "mechanic-settonguetarget",
+            "mechanic-tonguetarget"
+        ],
+        "body": [
+            "settonguetarget{} @${0:Target}"
+        ],
+        "description": "Sets the casting frog's tongue to target the given entity"
+    },
+    "mechanic-potion": {
+        "prefix": [
+            "mechanic-potion"
+        ],
+        "body": [
+            "potion{} @${0:Target}"
+        ],
+        "description": "Applies a potion effect to the target entity"
+    },
+    "mechanic-setSkillCooldown": {
+        "prefix": [
+            "mechanic-setSkillCooldown",
+            "mechanic-skillCooldown",
+            "mechanic-setskillcd",
+            "mechanic-skillcd"
+        ],
+        "body": [
+            "setSkillCooldown{} @${0:Target}"
+        ],
+        "description": "Sets the cooldown on the given skill for the target"
+    },
+    "mechanic-recoil": {
+        "prefix": [
+            "mechanic-recoil",
+            "mechanic-effect:recoil",
+            "mechanic-e:recoil"
+        ],
+        "body": [
+            "recoil{} @${0:Target}"
+        ],
+        "description": "Causes the player's screen to recoil"
+    },
+    "mechanic-setpathfindingmalus": {
+        "prefix": [
+            "mechanic-setpathfindingmalus",
+            "mechanic-setmalus",
+            "mechanic-malus"
+        ],
+        "body": [
+            "setpathfindingmalus{} @${0:Target}"
+        ],
+        "description": "Sets the pathfinding malus of a mob."
+    },
+    "mechanic-stun": {
+        "prefix": [
+            "mechanic-stun"
+        ],
+        "body": [
+            "stun{} @${0:Target}"
+        ],
+        "description": "Applies an aura that stuns the target entity"
+    },
+    "mechanic-swingarm": {
+        "prefix": [
+            "mechanic-swingarm",
+            "mechanic-armAnimation"
+        ],
+        "body": [
+            "swingarm{} @${0:Target}"
+        ],
+        "description": "Makes the caster swing their arm"
+    },
+    "mechanic-prison": {
+        "prefix": [
+            "mechanic-prison"
+        ],
+        "body": [
+            "prison{} @${0:Target}"
+        ],
+        "description": "Traps the target entity in blocks"
+    },
+    "mechanic-setRaiderCanJoinRaid": {
+        "prefix": [
+            "mechanic-setRaiderCanJoinRaid",
+            "mechanic-setCanJoinRaid"
+        ],
+        "body": [
+            "setRaiderCanJoinRaid{} @${0:Target}"
+        ],
+        "description": "Sets if the target raider can join a raid or not"
+    },
+    "mechanic-enderDragonSetPhase": {
+        "prefix": [
+            "mechanic-enderDragonSetPhase",
+            "mechanic-setEnderDragonPhase"
+        ],
+        "body": [
+            "enderDragonSetPhase{} @${0:Target}"
+        ],
+        "description": "Generates the EnderDragon portal"
+    },
+    "mechanic-bonemeal": {
+        "prefix": [
+            "mechanic-bonemeal"
+        ],
+        "body": [
+            "bonemeal{} @${0:Target}"
+        ],
+        "description": "Applies bonemeal to the targeted location"
+    },
+    "mechanic-messagejson": {
+        "prefix": [
+            "mechanic-messagejson",
+            "mechanic-jsonmessage",
+            "mechanic-jmsg",
+            "mechanic-jm"
+        ],
+        "body": [
+            "messagejson{} @${0:Target}"
+        ],
+        "description": "Sends a JSON-formatted message to the target entity"
+    },
+    "mechanic-variableUnset": {
+        "prefix": [
+            "mechanic-variableUnset",
+            "mechanic-varUnset",
+            "mechanic-unsetVariable",
+            "mechanic-unsetVar"
+        ],
+        "body": [
+            "variableUnset{} @${0:Target}"
+        ],
+        "description": "Unsets a variable"
+    },
+    "mechanic-shootpotion": {
+        "prefix": [
+            "mechanic-shootpotion"
+        ],
+        "body": [
+            "shootpotion{} @${0:Target}"
+        ],
+        "description": "Shoots a splash potion"
+    },
+    "mechanic-currencyGive": {
+        "prefix": [
+            "mechanic-currencyGive",
+            "mechanic-giveCurrency"
+        ],
+        "body": [
+            "currencyGive{} @${0:Target}"
+        ],
+        "description": "Gives an amount of vault currency"
+    },
+    "mechanic-onbowshoot": {
+        "prefix": [
+            "mechanic-onbowshoot",
+            "mechanic-onshoot"
+        ],
+        "body": [
+            "onbowshoot{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they shoot a bow"
+    },
+    "mechanic-onattack": {
+        "prefix": [
+            "mechanic-onattack",
+            "mechanic-onhit"
+        ],
+        "body": [
+            "onattack{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they damage something"
+    },
+    "mechanic-effect:particlebox": {
+        "prefix": [
+            "mechanic-effect:particlebox",
+            "mechanic-particlebox",
+            "mechanic-e:pb",
+            "mechanic-pb"
+        ],
+        "body": [
+            "effect:particlebox{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-playAnimation": {
+        "prefix": [
+            "mechanic-playAnimation",
+            "mechanic-effect:playanimation",
+            "mechanic-e:playanimation",
+            "mechanic-playarmanimation"
+        ],
+        "body": [
+            "playAnimation{} @${0:Target}"
+        ],
+        "description": "Forces the entity to play an animation"
+    },
+    "mechanic-auraRemove": {
+        "prefix": [
+            "mechanic-auraRemove",
+            "mechanic-removeaura",
+            "mechanic-removebuff",
+            "mechanic-removedebuff"
+        ],
+        "body": [
+            "auraRemove{} @${0:Target}"
+        ],
+        "description": "Removes an aura from the target."
+    },
+    "mechanic-OnSwing": {
+        "prefix": [
+            "mechanic-OnSwing",
+            "mechanic-OnLeftClick"
+        ],
+        "body": [
+            "OnSwing{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-shootshulkerbullet": {
+        "prefix": [
+            "mechanic-shootshulkerbullet",
+            "mechanic-shootshulker"
+        ],
+        "body": [
+            "shootshulkerbullet{} @${0:Target}"
+        ],
+        "description": "Shoots a shulker bullet at the target entity"
+    },
+    "mechanic-enderDragonSetRespawnPhase": {
+        "prefix": [
+            "mechanic-enderDragonSetRespawnPhase",
+            "mechanic-setEnderDragonRespawnPhase"
+        ],
+        "body": [
+            "enderDragonSetRespawnPhase{} @${0:Target}"
+        ],
+        "description": "Sets the game phase on an EnderDragon"
+    },
+    "mechanic-teleportto": {
+        "prefix": [
+            "mechanic-teleportto",
+            "mechanic-tpt",
+            "mechanic-teleportlocation",
+            "mechanic-tpl"
+        ],
+        "body": [
+            "teleportto{} @${0:Target}"
+        ],
+        "description": "Teleports the target entity to a location"
+    },
+    "mechanic-effect:thunderlevel": {
+        "prefix": [
+            "mechanic-effect:thunderlevel",
+            "mechanic-thunderlevel",
+            "mechanic-e:thunderlevel"
+        ],
+        "body": [
+            "effect:thunderlevel{} @${0:Target}"
+        ],
+        "description": "Modifies the skybox for the target player"
+    },
+    "mechanic-currencyTake": {
+        "prefix": [
+            "mechanic-currencyTake",
+            "mechanic-takeCurrency"
+        ],
+        "body": [
+            "currencyTake{} @${0:Target}"
+        ],
+        "description": "Removes an amount of vault currency"
+    },
+    "mechanic-setleashholder": {
+        "prefix": [
+            "mechanic-setleashholder",
+            "mechanic-setleasher"
+        ],
+        "body": [
+            "setleashholder{} @${0:Target}"
+        ],
+        "description": "Sets an entity to hold the caster's leash"
+    },
+    "mechanic-pickupitem": {
+        "prefix": [
+            "mechanic-pickupitem"
+        ],
+        "body": [
+            "pickupitem{} @${0:Target}"
+        ],
+        "description": "Picks up the target item entity"
+    },
+    "mechanic-effect:particlewave": {
+        "prefix": [
+            "mechanic-effect:particlewave",
+            "mechanic-particlewave",
+            "mechanic-e:pw"
+        ],
+        "body": [
+            "effect:particlewave{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-setname": {
+        "prefix": [
+            "mechanic-setname"
+        ],
+        "body": [
+            "setname{} @${0:Target}"
+        ],
+        "description": "Sets the casting mob's name"
+    },
+    "mechanic-setRaiderPatrolLeader": {
+        "prefix": [
+            "mechanic-setRaiderPatrolLeader",
+            "mechanic-setRaiderLeader"
+        ],
+        "body": [
+            "setRaiderPatrolLeader{} @${0:Target}"
+        ],
+        "description": "Sets the target raider to patrol the given location"
+    },
+    "mechanic-setRaiderPatrolBlock": {
+        "prefix": [
+            "mechanic-setRaiderPatrolBlock",
+            "mechanic-setRaiderBlock"
+        ],
+        "body": [
+            "setRaiderPatrolBlock{} @${0:Target}"
+        ],
+        "description": "Sets the target raider to patrol the given location"
+    },
+    "mechanic-hologram": {
+        "prefix": [
+            "mechanic-hologram",
+            "mechanic-summonhologram",
+            "mechanic-holo"
+        ],
+        "body": [
+            "hologram{} @${0:Target}"
+        ],
+        "description": "Spawns a hologram at a target location."
+    },
+    "mechanic-hideFromPlayers": {
+        "prefix": [
+            "mechanic-hideFromPlayers",
+            "mechanic-hideFromPlayer",
+            "mechanic-hide"
+        ],
+        "body": [
+            "hideFromPlayers{} @${0:Target}"
+        ],
+        "description": "Hides the caster from the targeted player(s)"
+    },
+    "mechanic-onblockbreak": {
+        "prefix": [
+            "mechanic-onblockbreak",
+            "mechanic-onbreakblock"
+        ],
+        "body": [
+            "onblockbreak{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they break a block"
+    },
+    "mechanic-randomskill": {
+        "prefix": [
+            "mechanic-randomskill",
+            "mechanic-randommeta"
+        ],
+        "body": [
+            "randomskill{} @${0:Target}"
+        ],
+        "description": "Executes a random metaskill"
+    },
+    "mechanic-fillChest": {
+        "prefix": [
+            "mechanic-fillChest",
+            "mechanic-populateChest",
+            "mechanic-fillContainer",
+            "mechanic-populateContainer"
+        ],
+        "body": [
+            "fillChest{} @${0:Target}"
+        ],
+        "description": "Fills a container with loot"
+    },
+    "mechanic-threat": {
+        "prefix": [
+            "mechanic-threat",
+            "mechanic-threatchange",
+            "mechanic-threatmod"
+        ],
+        "body": [
+            "threat{} @${0:Target}"
+        ],
+        "description": "Modifies the target entities' threat level"
+    },
+    "mechanic-effect:particlesphere": {
+        "prefix": [
+            "mechanic-effect:particlesphere",
+            "mechanic-particlesphere",
+            "mechanic-e:ps",
+            "mechanic-ps"
+        ],
+        "body": [
+            "effect:particlesphere{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-velocity": {
+        "prefix": [
+            "mechanic-velocity"
+        ],
+        "body": [
+            "velocity{} @${0:Target}"
+        ],
+        "description": "Sets the velocity on the target entity"
+    },
+    "mechanic-healpercent": {
+        "prefix": [
+            "mechanic-healpercent",
+            "mechanic-percentheal",
+            "mechanic-hp"
+        ],
+        "body": [
+            "healpercent{} @${0:Target}"
+        ],
+        "description": "Heals the target entity for a percentage of their health"
+    },
+    "mechanic-blockUnmask": {
+        "prefix": [
+            "mechanic-blockUnmask",
+            "mechanic-effect:blockUnmask",
+            "mechanic-e:blockunmask"
+        ],
+        "body": [
+            "blockUnmask{} @${0:Target}"
+        ],
+        "description": "Unmasks any nearby blocks that have been masked"
+    },
+    "mechanic-setlevel": {
+        "prefix": [
+            "mechanic-setlevel",
+            "mechanic-modifylevel"
+        ],
+        "body": [
+            "setlevel{} @${0:Target}"
+        ],
+        "description": "Modifies the castering mob's level"
+    },
+    "mechanic-effect:particlering": {
+        "prefix": [
+            "mechanic-effect:particlering",
+            "mechanic-particlering",
+            "mechanic-e:pr",
+            "mechanic-pr"
+        ],
+        "body": [
+            "effect:particlering{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-shoot": {
+        "prefix": [
+            "mechanic-shoot",
+            "mechanic-shootprojetile"
+        ],
+        "body": [
+            "shoot{} @${0:Target}"
+        ],
+        "description": "Shoots a projectile at the target location"
+    },
+    "mechanic-consumeslotitem": {
+        "prefix": [
+            "mechanic-consumeslotitem",
+            "mechanic-consumeslot"
+        ],
+        "body": [
+            "consumeslotitem{} @${0:Target}"
+        ],
+        "description": "Removes an amount of the target's item in a specified slot"
+    },
+    "mechanic-effect:ender": {
+        "prefix": [
+            "mechanic-effect:ender",
+            "mechanic-ender",
+            "mechanic-e:ender"
+        ],
+        "body": [
+            "effect:ender{} @${0:Target}"
+        ],
+        "description": "Creates the ender effect at the target location"
+    },
+    "mechanic-setspeed": {
+        "prefix": [
+            "mechanic-setspeed"
+        ],
+        "body": [
+            "setspeed{} @${0:Target}"
+        ],
+        "description": "Sets the speed attribute of the target entity"
+    },
+    "mechanic-shieldbreak": {
+        "prefix": [
+            "mechanic-shieldbreak",
+            "mechanic-disableshield"
+        ],
+        "body": [
+            "shieldbreak{} @${0:Target}"
+        ],
+        "description": "Breaks the target player's shield block."
+    },
+    "mechanic-closeInventory": {
+        "prefix": [
+            "mechanic-closeInventory"
+        ],
+        "body": [
+            "closeInventory{} @${0:Target}"
+        ],
+        "description": "Closes the target player's inventory"
+    },
+    "mechanic-OnInteract": {
+        "prefix": [
+            "mechanic-OnInteract",
+            "mechanic-OnInteract"
+        ],
+        "body": [
+            "OnInteract{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-ejectpassenger": {
+        "prefix": [
+            "mechanic-ejectpassenger",
+            "mechanic-eject_passenger"
+        ],
+        "body": [
+            "ejectpassenger{} @${0:Target}"
+        ],
+        "description": "Kicks off any entities using the caster as a vehicle"
+    },
+    "mechanic-effect:atom": {
+        "prefix": [
+            "mechanic-effect:atom",
+            "mechanic-e:atom",
+            "mechanic-atom"
+        ],
+        "body": [
+            "effect:atom{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-modifyprojectile": {
+        "prefix": [
+            "mechanic-modifyprojectile"
+        ],
+        "body": [
+            "modifyprojectile{} @${0:Target}"
+        ],
+        "description": "Modifies an attribute of the projectile that executed the mechanic"
+    },
+    "mechanic-barRemove": {
+        "prefix": [
+            "mechanic-barRemove"
+        ],
+        "body": [
+            "barRemove{} @${0:Target}"
+        ],
+        "description": "Removes a custom bossbar display"
+    },
+    "mechanic-effect:smokeswirl": {
+        "prefix": [
+            "mechanic-effect:smokeswirl",
+            "mechanic-smokeswirl",
+            "mechanic-e:smokeswirl"
+        ],
+        "body": [
+            "effect:smokeswirl{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-teleporty": {
+        "prefix": [
+            "mechanic-teleporty",
+            "mechanic-tpy"
+        ],
+        "body": [
+            "teleporty{} @${0:Target}"
+        ],
+        "description": "Teleports to the target Y coordinate"
+    },
+    "mechanic-setrotation": {
+        "prefix": [
+            "mechanic-setrotation",
+            "mechanic-setrot"
+        ],
+        "body": [
+            "setrotation{} @${0:Target}"
+        ],
+        "description": "Sets the target's yaw and/or pitch without teleporting it. Does not work on players!"
+    },
+    "mechanic-onKeyRelease": {
+        "prefix": [
+            "mechanic-onKeyRelease",
+            "mechanic-keyRelease",
+            "mechanic-kr"
+        ],
+        "body": [
+            "onKeyRelease{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the targeted entity that triggers a skill when a key is released"
+    },
+    "mechanic-GoatRam": {
+        "prefix": [
+            "mechanic-GoatRam"
+        ],
+        "body": [
+            "GoatRam{} @${0:Target}"
+        ],
+        "description": "Causes the goat to ram the targeted entity"
+    },
+    "mechanic-chain": {
+        "prefix": [
+            "mechanic-chain"
+        ],
+        "body": [
+            "chain{} @${0:Target}"
+        ],
+        "description": "Casts a metaskill that bounces between targets"
+    },
+    "mechanic-decapitate": {
+        "prefix": [
+            "mechanic-decapitate",
+            "mechanic-dropHead"
+        ],
+        "body": [
+            "decapitate{} @${0:Target}"
+        ],
+        "description": "Drops the target entity's head"
+    },
+    "mechanic-effect:particleline": {
+        "prefix": [
+            "mechanic-effect:particleline",
+            "mechanic-e:pl",
+            "mechanic-pl",
+            "mechanic-particleline"
+        ],
+        "body": [
+            "effect:particleline{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-effect:particleorbital": {
+        "prefix": [
+            "mechanic-effect:particleorbital",
+            "mechanic-e:particleorbital",
+            "mechanic-particleorbital",
+            "mechanic-effect:particlecircle",
+            "mechanic-particlecircle",
+            "mechanic-e:particlecricle"
+        ],
+        "body": [
+            "effect:particleorbital{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-playBlockStepSound": {
+        "prefix": [
+            "mechanic-playBlockStepSound",
+            "mechanic-blockStepSound"
+        ],
+        "body": [
+            "playBlockStepSound{} @${0:Target}"
+        ],
+        "description": "Plays the target block's stepping sound. Requires Paper."
+    },
+    "mechanic-playBlockBreakSound": {
+        "prefix": [
+            "mechanic-playBlockBreakSound",
+            "mechanic-blockBreakSound"
+        ],
+        "body": [
+            "playBlockBreakSound{} @${0:Target}"
+        ],
+        "description": "Plays the target block's breaking sound. Requires Paper."
+    },
+    "mechanic-extinguish": {
+        "prefix": [
+            "mechanic-extinguish",
+            "mechanic-removefire"
+        ],
+        "body": [
+            "extinguish{} @${0:Target}"
+        ],
+        "description": "Removes fire on the target entity"
+    },
+    "mechanic-tagadd": {
+        "prefix": [
+            "mechanic-tagadd",
+            "mechanic-addtag",
+            "mechanic-addscoreboardtag"
+        ],
+        "body": [
+            "tagadd{} @${0:Target}"
+        ],
+        "description": "Adds a scoreboard tag to the target entity"
+    },
+    "mechanic-setTrackedLocation": {
+        "prefix": [
+            "mechanic-setTrackedLocation",
+            "mechanic-tracklocation",
+            "mechanic-stl"
+        ],
+        "body": [
+            "setTrackedLocation{} @${0:Target}"
+        ],
+        "description": "Sets the mob's tracked location to the targeted location"
+    },
+    "mechanic-effect:stopsound": {
+        "prefix": [
+            "mechanic-effect:stopsound",
+            "mechanic-stopsound",
+            "mechanic-e:ss",
+            "mechanic-ss"
+        ],
+        "body": [
+            "effect:stopsound{} @${0:Target}"
+        ],
+        "description": "Stops a sound from playing for the targeted entity"
+    },
+    "mechanic-missile": {
+        "prefix": [
+            "mechanic-missile",
+            "mechanic-mi"
+        ],
+        "body": [
+            "missile{} @${0:Target}"
+        ],
+        "description": "Shoots a homing missile at the target"
+    },
+    "mechanic-disguiseold": {
+        "prefix": [
+            "mechanic-disguiseold"
+        ],
+        "body": [
+            "disguiseold{} @${0:Target}"
+        ],
+        "description": "Disguises the target entity"
+    },
+    "mechanic-modifyscore": {
+        "prefix": [
+            "mechanic-modifyscore"
+        ],
+        "body": [
+            "modifyscore{} @${0:Target}"
+        ],
+        "description": "Modifies a scoreboard value"
+    },
+    "mechanic-effect:enderbeam": {
+        "prefix": [
+            "mechanic-effect:enderbeam",
+            "mechanic-enderbeam"
+        ],
+        "body": [
+            "effect:enderbeam{} @${0:Target}"
+        ],
+        "description": "Creates an endercrystal beam pointing at the target"
+    },
+    "mechanic-blockMask": {
+        "prefix": [
+            "mechanic-blockMask",
+            "mechanic-effect:blockMask",
+            "mechanic-e:blockMask"
+        ],
+        "body": [
+            "blockMask{} @${0:Target}"
+        ],
+        "description": "Temporarily masks a block as a different block"
+    },
+    "mechanic-blockWave": {
+        "prefix": [
+            "mechanic-blockWave",
+            "mechanic-effect:blockWave",
+            "mechanic-e:blockWave"
+        ],
+        "body": [
+            "blockWave{} @${0:Target}"
+        ],
+        "description": "Temporarily masks a block as a different block"
+    },
+    "mechanic-lightning": {
+        "prefix": [
+            "mechanic-lightning"
+        ],
+        "body": [
+            "lightning{} @${0:Target}"
+        ],
+        "description": "Strikes lightning at the target location"
+    },
+    "mechanic-effect:glow": {
+        "prefix": [
+            "mechanic-effect:glow",
+            "mechanic-glow",
+            "mechanic-e:glow"
+        ],
+        "body": [
+            "effect:glow{} @${0:Target}"
+        ],
+        "description": "Makes the taget entity glow. Requires GlowAPI"
+    },
+    "mechanic-mounttarget": {
+        "prefix": [
+            "mechanic-mounttarget"
+        ],
+        "body": [
+            "mounttarget{} @${0:Target}"
+        ],
+        "description": "Causes the caster to mount the target entity"
+    },
+    "mechanic-playBlockHitSound": {
+        "prefix": [
+            "mechanic-playBlockHitSound",
+            "mechanic-blockHitSound"
+        ],
+        "body": [
+            "playBlockHitSound{} @${0:Target}"
+        ],
+        "description": "Plays the target block's hit sound. Requires Paper."
+    },
+    "mechanic-blackScreen": {
+        "prefix": [
+            "mechanic-blackScreen",
+            "mechanic-effect:blackScreen",
+            "mechanic-e:blackScreen"
+        ],
+        "body": [
+            "blackScreen{} @${0:Target}"
+        ],
+        "description": "Causes the player's screen to black out"
+    },
+    "mechanic-OnJump": {
+        "prefix": [
+            "mechanic-OnJump"
+        ],
+        "body": [
+            "OnJump{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they jump"
+    },
+    "mechanic-onblockplace": {
+        "prefix": [
+            "mechanic-onblockplace",
+            "mechanic-onplaceblock"
+        ],
+        "body": [
+            "onblockplace{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they place a block"
+    },
+    "mechanic-swap": {
+        "prefix": [
+            "mechanic-swap",
+            "mechanic-tpswap"
+        ],
+        "body": [
+            "swap{} @${0:Target}"
+        ],
+        "description": "Swaps positions with the target entity"
+    },
+    "mechanic-switch": {
+        "prefix": [
+            "mechanic-switch"
+        ],
+        "body": [
+            "switch{} @${0:Target}"
+        ],
+        "description": "Acts as a switch/case"
+    },
+    "mechanic-effect:itemspray": {
+        "prefix": [
+            "mechanic-effect:itemspray",
+            "mechanic-itemspray",
+            "mechanic-e:itemspray"
+        ],
+        "body": [
+            "effect:itemspray{} @${0:Target}"
+        ],
+        "description": "Sprays items everywhere"
+    },
+    "mechanic-feed": {
+        "prefix": [
+            "mechanic-feed"
+        ],
+        "body": [
+            "feed{} @${0:Target}"
+        ],
+        "description": "Feeds the target entity"
+    },
+    "mechanic-blockDestabilize": {
+        "prefix": [
+            "mechanic-blockDestabilize",
+            "mechanic-destabilizeBlock",
+            "mechanic-destabilizeBlocks"
+        ],
+        "body": [
+            "blockDestabilize{} @${0:Target}"
+        ],
+        "description": "Turns a block into a falling block"
+    },
+    "mechanic-sendtoast": {
+        "prefix": [
+            "mechanic-sendtoast",
+            "mechanic-advancementmessage",
+            "mechanic-advmessage",
+            "mechanic-toastmessage",
+            "mechanic-toastmsg"
+        ],
+        "body": [
+            "sendtoast{} @${0:Target}"
+        ],
+        "description": "Sends a message to the target player as an advancement"
+    },
+    "mechanic-modifytargetscore": {
+        "prefix": [
+            "mechanic-modifytargetscore",
+            "mechanic-mts"
+        ],
+        "body": [
+            "modifytargetscore{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-suicide": {
+        "prefix": [
+            "mechanic-suicide"
+        ],
+        "body": [
+            "suicide{} @${0:Target}"
+        ],
+        "description": "Kills the caster"
+    },
+    "mechanic-randommessage": {
+        "prefix": [
+            "mechanic-randommessage",
+            "mechanic-randommsg",
+            "mechanic-rmsg",
+            "mechanic-rm"
+        ],
+        "body": [
+            "randommessage{} @${0:Target}"
+        ],
+        "description": "Sends a random message to the target player"
+    },
+    "mechanic-modifyglobalscore": {
+        "prefix": [
+            "mechanic-modifyglobalscore",
+            "mechanic-mgs"
+        ],
+        "body": [
+            "modifyglobalscore{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-throw": {
+        "prefix": [
+            "mechanic-throw"
+        ],
+        "body": [
+            "throw{} @${0:Target}"
+        ],
+        "description": "Throws the target entity"
+    },
+    "mechanic-removeHeldItem": {
+        "prefix": [
+            "mechanic-removeHeldItem",
+            "mechanic-consumeHeldItem",
+            "mechanic-takeHeldItem"
+        ],
+        "body": [
+            "removeHeldItem{} @${0:Target}"
+        ],
+        "description": "Removes an amount of the target's held item"
+    },
+    "mechanic-togglelever": {
+        "prefix": [
+            "mechanic-togglelever",
+            "mechanic-lever"
+        ],
+        "body": [
+            "togglelever{} @${0:Target}"
+        ],
+        "description": "Toggles a lever at the target location"
+    },
+    "mechanic-tagremove": {
+        "prefix": [
+            "mechanic-tagremove",
+            "mechanic-removetag",
+            "mechanic-removescoreboardtag"
+        ],
+        "body": [
+            "tagremove{} @${0:Target}"
+        ],
+        "description": "Removes a scoreboard tag from the target entity"
+    },
+    "mechanic-disguisemodify": {
+        "prefix": [
+            "mechanic-disguisemodify",
+            "mechanic-modifydisguise"
+        ],
+        "body": [
+            "disguisemodify{} @${0:Target}"
+        ],
+        "description": "Disguises the target entity"
+    },
+    "mechanic-effect:geyser": {
+        "prefix": [
+            "mechanic-effect:geyser",
+            "mechanic-geyser",
+            "mechanic-e:geyser"
+        ],
+        "body": [
+            "effect:geyser{} @${0:Target}"
+        ],
+        "description": "Creates a geyser at the target location"
+    },
+    "mechanic-effect:explosion": {
+        "prefix": [
+            "mechanic-effect:explosion",
+            "mechanic-e:explosion",
+            "mechanic-effect:explode",
+            "mechanic-e:explode"
+        ],
+        "body": [
+            "effect:explosion{} @${0:Target}"
+        ],
+        "description": "Causes an explosion effect at the target location"
+    },
+    "mechanic-sudoskill": {
+        "prefix": [
+            "mechanic-sudoskill",
+            "mechanic-sudo"
+        ],
+        "body": [
+            "sudoskill{} @${0:Target}"
+        ],
+        "description": "Forces the inherited target to execute the skill at the targeted entity"
+    },
+    "mechanic-raytraceTo": {
+        "prefix": [
+            "mechanic-raytraceTo"
+        ],
+        "body": [
+            "raytraceTo{} @${0:Target}"
+        ],
+        "description": "Executes a skill with the result of a raytrace to the target location"
+    },
+    "mechanic-posearmorstand": {
+        "prefix": [
+            "mechanic-posearmorstand",
+            "mechanic-armorstandpose"
+        ],
+        "body": [
+            "posearmorstand{} @${0:Target}"
+        ],
+        "description": "Poses the target armor stand"
+    },
+    "mechanic-breakBlockAndGiveItem": {
+        "prefix": [
+            "mechanic-breakBlockAndGiveItem",
+            "mechanic-blockBreakAndGiveItem"
+        ],
+        "body": [
+            "breakBlockAndGiveItem{} @${0:Target}"
+        ],
+        "description": "Breaks the block at the target location"
+    },
+    "mechanic-pull": {
+        "prefix": [
+            "mechanic-pull"
+        ],
+        "body": [
+            "pull{} @${0:Target}"
+        ],
+        "description": "Pulls the target entity towards the caster"
+    },
+    "mechanic-raytrace": {
+        "prefix": [
+            "mechanic-raytrace"
+        ],
+        "body": [
+            "raytrace{} @${0:Target}"
+        ],
+        "description": "Executes a skill with the result of a raytrace"
+    },
+    "mechanic-undisguise": {
+        "prefix": [
+            "mechanic-undisguise",
+            "mechanic-disguiseRemove"
+        ],
+        "body": [
+            "undisguise{} @${0:Target}"
+        ],
+        "description": "Removes a disguise from the target entity"
+    },
+    "mechanic-propel": {
+        "prefix": [
+            "mechanic-propel"
+        ],
+        "body": [
+            "propel{} @${0:Target}"
+        ],
+        "description": "Propels the caster towards the target"
+    },
+    "mechanic-oxygen": {
+        "prefix": [
+            "mechanic-oxygen"
+        ],
+        "body": [
+            "oxygen{} @${0:Target}"
+        ],
+        "description": "Gives the target player oxygen"
+    },
+    "mechanic-gcd": {
+        "prefix": [
+            "mechanic-gcd",
+            "mechanic-globalcooldown",
+            "mechanic-setgcd",
+            "mechanic-setglobalcooldown"
+        ],
+        "body": [
+            "gcd{} @${0:Target}"
+        ],
+        "description": "Triggers the global cooldown for the caster"
+    },
+    "mechanic-remount": {
+        "prefix": [
+            "mechanic-remount"
+        ],
+        "body": [
+            "remount{} @${0:Target}"
+        ],
+        "description": "Causes the caster to remount their mount"
+    },
+    "mechanic-teleport": {
+        "prefix": [
+            "mechanic-teleport",
+            "mechanic-tp"
+        ],
+        "body": [
+            "teleport{} @${0:Target}"
+        ],
+        "description": "Teleports to the target location"
+    },
+    "mechanic-freeze": {
+        "prefix": [
+            "mechanic-freeze"
+        ],
+        "body": [
+            "freeze{} @${0:Target}"
+        ],
+        "description": "Chills the target entity"
+    },
+    "mechanic-damagePercent": {
+        "prefix": [
+            "mechanic-damagePercent",
+            "mechanic-percentDamage"
+        ],
+        "body": [
+            "damagePercent{} @${0:Target}"
+        ],
+        "description": "Deals a percentage of the target's health in damage"
+    },
+    "mechanic-removeowner": {
+        "prefix": [
+            "mechanic-removeowner",
+            "mechanic-clearowner"
+        ],
+        "body": [
+            "removeowner{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-variableSetLocation": {
+        "prefix": [
+            "mechanic-variableSetLocation",
+            "mechanic-setVariableLocation",
+            "mechanic-setVarLoc"
+        ],
+        "body": [
+            "variableSetLocation{} @${0:Target}"
+        ],
+        "description": "Sets a variable to the given location"
+    },
+    "mechanic-setfaction": {
+        "prefix": [
+            "mechanic-setfaction"
+        ],
+        "body": [
+            "setfaction{} @${0:Target}"
+        ],
+        "description": "Sets the target mob's faction"
+    },
+    "mechanic-forcepull": {
+        "prefix": [
+            "mechanic-forcepull"
+        ],
+        "body": [
+            "forcepull{} @${0:Target}"
+        ],
+        "description": "Teleports the target entity to the caster"
+    },
+    "mechanic-modifymobscore": {
+        "prefix": [
+            "mechanic-modifymobscore",
+            "mechanic-mms"
+        ],
+        "body": [
+            "modifymobscore{} @${0:Target}"
+        ],
+        "description": ""
+    },
+    "mechanic-cancelEvent": {
+        "prefix": [
+            "mechanic-cancelEvent"
+        ],
+        "body": [
+            "cancelEvent{} @${0:Target}"
+        ],
+        "description": "Cancels the calling event"
+    },
+    "mechanic-look": {
+        "prefix": [
+            "mechanic-look"
+        ],
+        "body": [
+            "look{} @${0:Target}"
+        ],
+        "description": "Forces the caster to look at the target location"
+    },
+    "mechanic-delay": {
+        "prefix": [
+            "mechanic-delay"
+        ],
+        "body": [
+            "delay{} @${0:Target}"
+        ],
+        "description": "Delays the execution of the next mechanic"
+    },
+    "mechanic-threatclear": {
+        "prefix": [
+            "mechanic-threatclear",
+            "mechanic-clearthreat"
+        ],
+        "body": [
+            "threatclear{} @${0:Target}"
+        ],
+        "description": "Clears the caster's threat table"
+    },
+    "mechanic-speak": {
+        "prefix": [
+            "mechanic-speak",
+            "mechanic-speech"
+        ],
+        "body": [
+            "speak{} @${0:Target}"
+        ],
+        "description": "Makes the caster speak using chat and speech bubbles"
+    },
+    "mechanic-cquip": {
+        "prefix": [
+            "mechanic-cquip"
+        ],
+        "body": [
+            "cquip{} @${0:Target}"
+        ],
+        "description": "Causes the caster to cquip an item or droptable"
+    },
+    "mechanic-rally": {
+        "prefix": [
+            "mechanic-rally",
+            "mechanic-callforhelp"
+        ],
+        "body": [
+            "rally{} @${0:Target}"
+        ],
+        "description": "Calls for nearby entities to attack the target"
+    },
+    "mechanic-arrowvolley": {
+        "prefix": [
+            "mechanic-arrowvolley"
+        ],
+        "body": [
+            "arrowvolley{} @${0:Target}"
+        ],
+        "description": "Shoots a volley of arrows"
+    },
+    "mechanic-setcollidable": {
+        "prefix": [
+            "mechanic-setcollidable"
+        ],
+        "body": [
+            "setcollidable{} @${0:Target}"
+        ],
+        "description": "Sets whether the mob is collidable"
+    },
+    "mechanic-ignite": {
+        "prefix": [
+            "mechanic-ignite"
+        ],
+        "body": [
+            "ignite{} @${0:Target}"
+        ],
+        "description": "Sets the target entity on fire"
+    },
+    "mechanic-pushbutton": {
+        "prefix": [
+            "mechanic-pushbutton",
+            "mechanic-buttonpush"
+        ],
+        "body": [
+            "pushbutton{} @${0:Target}"
+        ],
+        "description": "Pushes a button at the target location"
+    },
+    "mechanic-cast": {
+        "prefix": [
+            "mechanic-cast"
+        ],
+        "body": [
+            "cast{} @${0:Target}"
+        ],
+        "description": "Casts a metaskill with various options"
+    },
+    "mechanic-enderDragonResetCrystals": {
+        "prefix": [
+            "mechanic-enderDragonResetCrystals",
+            "mechanic-resetEnderResetCrystals"
+        ],
+        "body": [
+            "enderDragonResetCrystals{} @${0:Target}"
+        ],
+        "description": "Generates the EnderDragon crystals"
+    },
+    "mechanic-dismount": {
+        "prefix": [
+            "mechanic-dismount"
+        ],
+        "body": [
+            "dismount{} @${0:Target}"
+        ],
+        "description": "Dismounts the target entity"
+    },
+    "mechanic-barSet": {
+        "prefix": [
+            "mechanic-barSet"
+        ],
+        "body": [
+            "barSet{} @${0:Target}"
+        ],
+        "description": "Sets the display values on a custom bossbar"
+    },
+    "mechanic-leap": {
+        "prefix": [
+            "mechanic-leap"
+        ],
+        "body": [
+            "leap{} @${0:Target}"
+        ],
+        "description": "Causes the caster to leap to the target location"
+    },
+    "mechanic-remove": {
+        "prefix": [
+            "mechanic-remove"
+        ],
+        "body": [
+            "remove{} @${0:Target}"
+        ],
+        "description": "Removes the target entity from existence"
+    },
+    "mechanic-runaitargetselector": {
+        "prefix": [
+            "mechanic-runaitargetselector",
+            "mechanic-aitarget"
+        ],
+        "body": [
+            "runaitargetselector{} @${0:Target}"
+        ],
+        "description": "Modify an AI Target Selector of the caster"
+    },
+    "mechanic-setscore": {
+        "prefix": [
+            "mechanic-setscore"
+        ],
+        "body": [
+            "setscore{} @${0:Target}"
+        ],
+        "description": "Sets a scoreboard value"
+    },
+    "mechanic-setgamemode": {
+        "prefix": [
+            "mechanic-setgamemode"
+        ],
+        "body": [
+            "setgamemode{} @${0:Target}"
+        ],
+        "description": "Sets the gamemode of the target player"
+    },
+    "mechanic-disengage": {
+        "prefix": [
+            "mechanic-disengage"
+        ],
+        "body": [
+            "disengage{} @${0:Target}"
+        ],
+        "description": "Causes the caster to leap backwards away from the target entity"
+    },
+    "mechanic-enderDragonSpawnPortal": {
+        "prefix": [
+            "mechanic-enderDragonSpawnPortal",
+            "mechanic-spawnEnderDragonPortal"
+        ],
+        "body": [
+            "enderDragonSpawnPortal{} @${0:Target}"
+        ],
+        "description": "Sets the game phase on an EnderDragon"
+    },
+    "mechanic-setNoDamageTicks": {
+        "prefix": [
+            "mechanic-setNoDamageTicks",
+            "mechanic-setimmunityticks"
+        ],
+        "body": [
+            "setNoDamageTicks{} @${0:Target}"
+        ],
+        "description": "Sets damage immunity ticks on the target entity"
+    },
+    "mechanic-mountme": {
+        "prefix": [
+            "mechanic-mountme"
+        ],
+        "body": [
+            "mountme{} @${0:Target}"
+        ],
+        "description": "Causes the ctarget entity to mount the caster"
+    },
+    "mechanic-bouncy": {
+        "prefix": [
+            "mechanic-bouncy"
+        ],
+        "body": [
+            "bouncy{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that makes it bouncy"
+    },
+    "mechanic-ondeath": {
+        "prefix": [
+            "mechanic-ondeath"
+        ],
+        "body": [
+            "ondeath{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they die"
+    },
+    "mechanic-lunge": {
+        "prefix": [
+            "mechanic-lunge"
+        ],
+        "body": [
+            "lunge{} @${0:Target}"
+        ],
+        "description": "Causes the caster to lunge forward at the target"
+    },
+    "mechanic-disguise": {
+        "prefix": [
+            "mechanic-disguise"
+        ],
+        "body": [
+            "disguise{} @${0:Target}"
+        ],
+        "description": "Disguises the target entity"
+    },
+    "mechanic-ondamaged": {
+        "prefix": [
+            "mechanic-ondamaged"
+        ],
+        "body": [
+            "ondamaged{} @${0:Target}"
+        ],
+        "description": "Applies an aura to the target that triggers a skill when they take damage"
+    },
+    "mechanic-equip": {
+        "prefix": [
+            "mechanic-equip"
+        ],
+        "body": [
+            "equip{} @${0:Target}"
+        ],
+        "description": "Causes the caster to equip an item or droptable"
+    },
+    "mechanic-setpitch": {
+        "prefix": [
+            "mechanic-setpitch"
+        ],
+        "body": [
+            "setpitch{} @${0:Target}"
+        ],
+        "description": "Modifies the head pitch of the target entity"
     }
 }
